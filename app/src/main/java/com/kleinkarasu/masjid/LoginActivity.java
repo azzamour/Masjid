@@ -66,6 +66,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
+        if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
+            //email is empty
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if(TextUtils.isEmpty(email)) {
             //email is empty
             Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show();
@@ -77,6 +83,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
 
         //show progress dialog
         progressDialog.setMessage("Logging in...");
@@ -91,7 +99,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     startActivityByRole(user);
                 }
                 else {
-
+                    Toast.makeText(getApplicationContext(), "Email atau Password yang anda masukkan salah", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -4,4 +4,7 @@
         <item>warga</item>
         <item>takmir</item>
     </string-array>
+    <string name="toast_text_email">Please enter email</string>
+    <string name="toast_text_pwd">Please enter password</string>
+    <string name="toast_text_wrong">Please enter email and password</string>
 </resources>
