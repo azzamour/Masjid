@@ -44,11 +44,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         myRef = firebaseDatabase.getReference();
-
+        progressDialog = new ProgressDialog(this);
 
         if(firebaseAuth.getCurrentUser() != null) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivityByRole(firebaseAuth.getCurrentUser());
         }
 
         btnSignIn = (Button) findViewById(R.id.btn_signin);
@@ -58,8 +57,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         btnSignIn.setOnClickListener(this);
         tvSignUp.setOnClickListener(this);
-
-        progressDialog = new ProgressDialog(this);
     }
 
     private void userLogin() {
@@ -122,10 +119,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void startActivityByRole(FirebaseUser user) {
+        progressDialog.setMessage("Logging in...");
+        progressDialog.show();
         myRef.child("roles").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getValue().toString().equals("warga")) {
+                    progressDialog.dismiss();
                     finish();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
