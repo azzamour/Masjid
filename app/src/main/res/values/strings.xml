@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Masjid</string>
+    <string-array name="roles_array">
+        <item>warga</item>
+        <item>takmir</item>
+    </string-array>
+</resources>

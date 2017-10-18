@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "77815693928",
+    "firebase_url": "https://masjid-cacc9.firebaseio.com",
+    "project_id": "masjid-cacc9",
+    "storage_bucket": "masjid-cacc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77815693928:android:781b780e2666fd23",
+        "android_client_info": {
+          "package_name": "com.kleinkarasu.masjid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77815693928-dnaf3436tqr2mfl2h33dipj999698npu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kleinkarasu.masjid",
+            "certificate_hash": "3a829babd085569ede87c2a3d87239c57b2c7892"
+          }
+        },
+        {
+          "client_id": "77815693928-kv6sfugdk52iv3n7eqskpg4a42gace3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWfq4Aq2wIfNt8SsGtNghODsjxxyYgTvk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77815693928-kv6sfugdk52iv3n7eqskpg4a42gace3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
