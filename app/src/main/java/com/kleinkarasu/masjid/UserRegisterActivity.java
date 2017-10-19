@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,9 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserRegisterActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -100,11 +96,6 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
-        if(TextUtils.isEmpty(role)) {
-            Toast.makeText(this, "Please select role", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         //show progress dialog
         progressDialog.setMessage("Registering User...");
         progressDialog.show();
@@ -121,7 +112,7 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
                             myRef.child("users").child(user.getUid()).setValue(newUser);
 
                             finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), WargaActivity.class));
                         }
                         else {
                             Toast.makeText(UserRegisterActivity.this, "Could not register... please try again", Toast.LENGTH_LONG).show();

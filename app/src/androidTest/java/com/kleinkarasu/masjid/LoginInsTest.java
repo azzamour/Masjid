@@ -3,8 +3,10 @@ package com.kleinkarasu.masjid;
 /**import android.app.Activity;
  import android.content.Context;
  import android.support.test.InstrumentationRegistry;*/
-import android.support.test.rule.ActivityTestRule;
+import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.runner.AndroidJUnit4;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.hamcrest.Matchers;
 import org.junit.Rule;
@@ -16,9 +18,11 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static android.support.test.espresso.intent.Intents.intended;
 /**import static org.junit.Assert.*;
  import static android.support.test.espresso.assertion.ViewAssertions.matches;
  import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
@@ -36,8 +40,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 public class LoginInsTest {
 
     @Rule
-    public ActivityTestRule<LoginActivity> mLoginActivityActivityTestRule =
-            new ActivityTestRule<>(LoginActivity.class);
+    public IntentsTestRule<LoginActivity> mLoginActivityActivityTestRule =
+            new IntentsTestRule<>(LoginActivity.class);
 
     @Test
     public void cekLoginBtn_kosongan_pwd() throws Exception {
@@ -109,5 +113,25 @@ public class LoginInsTest {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void cekLoginBtn_bener_password_bener_email() throws Exception{
+        onView(withId(R.id.et_email))
+                .perform(click()).perform(typeText("admin@user.com")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password))
+                .perform(click()).perform(typeText("123456")).perform(closeSoftKeyboard());
+        onView(withId(R.id.btn_signin))
+                .perform(click());
+
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        intended(hasComponent(WargaActivity.class.getName()));
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
     }
 }

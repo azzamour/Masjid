@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (dataSnapshot.getValue().toString().equals("warga")) {
                     progressDialog.dismiss();
                     finish();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), WargaActivity.class));
                 }
                 else if (dataSnapshot.getValue().toString().equals("takmir")) {
                     finish();

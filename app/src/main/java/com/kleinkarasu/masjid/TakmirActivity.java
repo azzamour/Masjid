@@ -33,6 +33,11 @@ public class TakmirActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+        if(user == null) {
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
         myRef = FirebaseDatabase.getInstance().getReference();
         myRef.child("users").child(user.getUid()).child("masjid").addValueEventListener(new ValueEventListener() {
             @Override
