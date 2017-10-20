@@ -13,6 +13,7 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
@@ -79,12 +80,7 @@ public class MasjFormTest {
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
                 .perform(click());
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
+
         Thread.sleep(3000);
         intended(hasComponent(MasjidFormActivity.class.getName()));
         onView(withId(R.id.et_kecamatan))
@@ -147,12 +143,7 @@ public class MasjFormTest {
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
                 .perform(click());
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
+
         Thread.sleep(3000);
         intended(hasComponent(MasjidFormActivity.class.getName()));
         onView(withId(R.id.et_nama))
@@ -165,6 +156,37 @@ public class MasjFormTest {
                 .perform(click());
         onView(withText("Please enter alamat"))
                 .inRoot(withDecorView(Matchers.not(Matchers.is(mUserRegisterActivityTestRule.getActivity().getWindow().getDecorView()))));
+    }
+
+    @Test
+    public void berhasil_regis_takmir_sukses() throws Exception {
+        onView(withId(R.id.et_nama))
+                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_email))
+                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_username))
+                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password))
+                .perform(typeText("bejo123456")).perform(closeSoftKeyboard());
+        onView(withId(R.id.spnr_role)).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
+        onView(withId(R.id.btn_register))
+                .perform(click());
+
+        Thread.sleep(3000);
+        intended(hasComponent(MasjidFormActivity.class.getName()));
+        onView(withId(R.id.et_nama))
+                .perform(typeText("Masjid Annur")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_kota))
+                .perform(typeText("Surabaya")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_alamat))
+                .perform(typeText("Simo Hilir Barat 8H/9")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_kecamatan))
+                .perform(typeText("Sukomanunggal")).perform(closeSoftKeyboard());
+        onView(withId(R.id.btn_register))
+                .perform(click());
+        Thread.sleep(3000);
+
     }
 
 }
