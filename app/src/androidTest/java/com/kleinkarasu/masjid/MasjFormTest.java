@@ -35,13 +35,13 @@ public class MasjFormTest {
     @Test
     public void berhasil_regis_takmir_ilangKecamatan() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+                .perform(typeText("Agus Sumarno")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("agussumarno@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+                .perform(typeText("agusSumar")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("bejo123456")).perform(closeSoftKeyboard());
+                .perform(typeText("agus123456")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
@@ -69,13 +69,13 @@ public class MasjFormTest {
     @Test
     public void berhasil_regis_takmir_ilang_nama() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+                .perform(typeText("Agus Sumarno")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("agussumarno@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+                .perform(typeText("agusSumar")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("bejo123456")).perform(closeSoftKeyboard());
+                .perform(typeText("agus123456")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
@@ -98,13 +98,13 @@ public class MasjFormTest {
     @Test
     public void berhasil_regis_takmir_ilangKota() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+                .perform(typeText("Agus Sumarno")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("agussumarno@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+                .perform(typeText("agusSumar")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("bejo123456")).perform(closeSoftKeyboard());
+                .perform(typeText("agus123456")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
@@ -132,13 +132,13 @@ public class MasjFormTest {
     @Test
     public void berhasil_regis_takmir_ilangAlamat() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+                .perform(typeText("Agus Sumarno")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("agussumarno@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+                .perform(typeText("agusSumar")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("bejo123456")).perform(closeSoftKeyboard());
+                .perform(typeText("agus123456")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
@@ -161,13 +161,13 @@ public class MasjFormTest {
     @Test
     public void berhasil_regis_takmir_sukses() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+                .perform(typeText("Agus Sumarno")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("agussumarno@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+                .perform(typeText("agusSumar")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("bejo123456")).perform(closeSoftKeyboard());
+                .perform(typeText("agus123456")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
