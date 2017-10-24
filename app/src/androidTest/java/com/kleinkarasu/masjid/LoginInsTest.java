@@ -132,10 +132,7 @@ public class LoginInsTest {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        intended(hasComponent(WargaActivity.class.getName()));
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
-        onView(withText("Log out")).perform(click());
+
         //firebaseAuth.signOut();
     }
 }
