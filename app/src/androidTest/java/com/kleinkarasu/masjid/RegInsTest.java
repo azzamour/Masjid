@@ -242,13 +242,13 @@ public class RegInsTest {
     @Test
     public void berhasil_regis_warga() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Bejo Sugiantoro")).perform(closeSoftKeyboard());
+                .perform(typeText("Bejo Sugiantoroyo")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("bejo@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("bejoyo@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("bejoSugi")).perform(closeSoftKeyboard());
+                .perform(typeText("bejoSugiyo")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("123456")).perform(closeSoftKeyboard());
+                .perform(typeText("1234567")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("warga"))).perform(click());
         onView(withId(R.id.btn_register))

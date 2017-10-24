@@ -8,8 +8,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -161,13 +163,13 @@ public class MasjFormTest {
     @Test
     public void berhasil_regis_takmir_sukses() throws Exception {
         onView(withId(R.id.et_nama))
-                .perform(typeText("Agus Sumarno")).perform(closeSoftKeyboard());
+                .perform(typeText("Agus Sumarto")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_email))
-                .perform(typeText("agussumarno@gmail.com")).perform(closeSoftKeyboard());
+                .perform(typeText("agussumarto@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_username))
-                .perform(typeText("agusSumar")).perform(closeSoftKeyboard());
+                .perform(typeText("agusSumto")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_password))
-                .perform(typeText("agus123456")).perform(closeSoftKeyboard());
+                .perform(typeText("agust123456")).perform(closeSoftKeyboard());
         onView(withId(R.id.spnr_role)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("takmir"))).perform(click());
         onView(withId(R.id.btn_register))
@@ -182,10 +184,12 @@ public class MasjFormTest {
         onView(withId(R.id.et_alamat))
                 .perform(typeText("Simo Hilir Barat 8H/9")).perform(closeSoftKeyboard());
         onView(withId(R.id.et_kecamatan))
-                .perform(typeText("Sukomanunggal")).perform(closeSoftKeyboard());
+                .perform(typeText("Sukomanunggali")).perform(closeSoftKeyboard());
         onView(withId(R.id.btn_register))
                 .perform(click());
-        Thread.sleep(3000);
+        Thread.sleep(10000);
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
+        onView(withText("Log out")).perform(click());
 
     }
 
